@@ -50,7 +50,7 @@ resource "aws_vpc_peering_connection" "default" {
   tags = merge(
     module.labels.tags,
     {
-      "Name" = format("%s-peering", module.labels.id)
+      "Name" = module.labels.id
     }
   )
 }
@@ -104,7 +104,7 @@ resource "aws_vpc_peering_connection_accepter" "peer" {
   tags = merge(
     module.labels.tags,
     {
-      "Name" = format("%s-peering", module.labels.environment)
+      "Name" = module.labels.id
     }
   )
 }
@@ -204,7 +204,7 @@ resource "aws_vpc_peering_connection" "region" {
   tags = merge(
     module.labels.tags,
     {
-      "Name" = format("%s-peering", module.labels.environment)
+      "Name" = module.labels.id
     }
   )
 }

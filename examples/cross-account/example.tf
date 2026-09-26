@@ -14,7 +14,7 @@ locals {
 ## accept_region        : same region as requestor since both VPCs are in ap-south-1.
 ## peer_owner_id        : AWS account ID of the acceptor VPC owner (Account B).
 ##-----------------------------------------------------------------------------
-module "vpc-peering" {
+module "vpc_peering" {
   source = "./../../"
 
   name              = local.name
